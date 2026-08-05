@@ -1,40 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas</title>
     <link rel="stylesheet" href="style.css">
-    <title>Gerador de Senha</title>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Gerador de Senhas</h1>
-        </div>
+        <!-- Cabeçalho -->
+        <header class="header">
+            <div>
+                <h1>Gerador de Senhas</h1>
+                <p>Gere instantaneamente uma senha aleatória e segura.</p>
+            </div>
+            <div class="cadeado-icon"> "<img src="img/lock.png" alt="cadeado-icon" srcset="cadeado-icon"></div>
+        </header>
 
-        <div class="display-box">
-            <span id="password">SENHA</span>
-            <button  class="copy-btn" id="copyBtn" title="Copiar">Copiar</button>
-        </div>
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <div class="left-panel">
+                <!-- Campo de Exibição da Senha -->
+                <div class="field-group">
+                    <label class="label-title">Senha:</label>
+                    <input type="text" id="password-display" readonly placeholder="Sua senha aparecerá aqui">
+                </div>
 
-        <div class="custom-section"> 
-            <h2>Personalize sua Senha</h2>
+                <!-- Configurações de Personalização -->
+                <div class="personalize-box">
+                    <h3>Personalize sua Senha:</h3>
+                    
+                    <div class="config-row">
+                        <!-- Tamanho da Senha -->
+                        <div class="length-control">
+                            <label>Número de caracteres:</label>
+                            <div class="counter">
+                                <button type="button" id="btn-minus">-</button>
+                                <input type="number" id="password-length" value="12" min="4" max="32">
+                                <button type="button" id="btn-plus">+</button>
+                            </div>
+                        </div>
 
+                        <!-- Opções de Caracteres -->
+                        <div class="options-control">
+                            <label>Características da senha:</label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chk-uppercase" checked> Letras maiúsculas
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chk-lowercase" checked> Letras minúsculas
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chk-numbers" checked> Números
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="chk-symbols"> Símbolos
+                            </label>
+                        </div>
+                    </div>
 
-            <div class="control-group">
-                <span class="control-label">Número de caracteres</span>
+                    <!-- Botão de Ação e Barra de Força Rápida -->
+                    <div class="action-row">
+                        <button id="btn-generate">Gerar Senha</button>
+                        <div class="strength-status">
+                            <span>Força da sua Senha:</span>
+                            <div id="strength-bar-preview" class="bar-preview"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="counter">
-                <button  id="decrement">.</button>
-                <span id="lengthVal">12</span>
-                <button id="increment">+</button>
-            </div>
-        </div>
-
-        <button class="generate-btn" id="generateBtn">Gerar nova Senha</button>
+            <!-- Painel de Força Lateral -->
+            <aside class="right-panel">
+                <h3>Como saber a força da sua senha:</h3>
+                
+                <div class="strength-indicator fraca" id="indicator-fraca">
+                    <div class="bar"></div>
+                    <span>FRACA</span>
+                </div>
+                
+                <div class="strength-indicator media" id="indicator-media">
+                    <div class="bar"></div>
+                    <span>MÉDIA</span>
+                </div>
+                
+                <div class="strength-indicator forte" id="indicator-forte">
+                    <div class="bar"></div>
+                    <span>FORTE</span>
+                </div>
+            </aside>
+        </main>
     </div>
-</div>
-    
+
+    <script src="main.js"></script>
 </body>
 </html>

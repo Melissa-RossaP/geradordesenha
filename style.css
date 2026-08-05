@@ -1,0 +1,263 @@
+:root {
+    --bg-pink: #FFB3C1;
+    --card-pink: #FFA4B4;
+    --text-dark: #A8324A;
+    --input-bg: #FFCAD4;
+    --white: #FFFFFF;
+    --danger: #D90429;
+    --warning: #FFCC00;
+    --success: #38B000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--bg-pink);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    color: var(--text-dark);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.cadeado-icon {
+    font-size: 3rem;
+}
+
+/* Layout Estrutural */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* Painel Esquerdo */
+.field-group {
+    margin-bottom: 25px;
+}
+
+.label-title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#password-display {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: none;
+    border-bottom: 2px solid var(--text-dark);
+    padding: 12px;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-family: monospace;
+    outline: none;
+}
+
+/* Caixa Personalizar */
+.personalize-box {
+    background-color: var(--card-pink);
+    border: 2px solid var(--text-dark);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.personalize-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.config-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.length-control label, .options-control label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Contador de número */
+.counter {
+    display: flex;
+    align-items: center;
+    background-color: var(--input-bg);
+    border: 1px solid var(--text-dark);
+    border-radius: 4px;
+    width: max-content;
+    overflow: hidden;
+}
+
+.counter button {
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.counter button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.counter input {
+    width: 45px;
+    height: 35px;
+    border: none;
+    background: none;
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: bold;
+    -moz-appearance: textfield;
+}
+
+.counter input::-webkit-outer-spin-button,
+.counter input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Checkboxes */
+.checkbox-label {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal !important;
+    cursor: pointer;
+    margin-bottom: 6px !important;
+}
+
+/* Linha de Ação Inferior */
+.action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#btn-generate {
+    background-color: var(--text-dark);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#btn-generate:hover {
+    opacity: 0.9;
+}
+
+.strength-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.bar-preview {
+    width: 100px;
+    height: 20px;
+    background-color: var(--input-bg);
+    border-radius: 10px;
+    border: 1px solid var(--text-dark);
+    transition: background-color 0.3s;
+}
+
+/* Painel Direito (Indicadores) */
+.right-panel h3 {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.strength-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    opacity: 0.4; /* Opacidade reduzida por padrão */
+    transition: opacity 0.3s;
+}
+
+.strength-indicator.active {
+    opacity: 1; /* Fica ativo com base na força real */
+}
+
+.strength-indicator .bar {
+    width: 120px;
+    height: 28px;
+    border-radius: 14px;
+    border: 2px solid var(--white);
+}
+
+.strength-indicator span {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.fraca .bar { background-color: var(--danger); }
+.fraca span { color: var(--danger); }
+
+.media .bar { background-color: var(--warning); }
+.media span { color: var(--warning); }
+
+.forte .bar { background-color: var(--success); }
+.forte span { color: var(--success); }
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    .config-row {
+        grid-template-columns: 1fr;
+    }
+}
