@@ -263,7 +263,9 @@ body {
 
 
 .cadeado-icon img {
-    width: 60px; /* Ajuste a largura conforme o tamanho original da sua imagem */
+    width: 100px; /* Ajuste a largura conforme o tamanho original da sua imagem */
     height: auto;
     display: block;
+    flex-direction: column;
+    align-content: center;
 }
