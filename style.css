@@ -151,7 +151,6 @@ body {
     color: var(--text-dark);
     font-size: 1.1rem;
     font-weight: bold;
-    -moz-appearance: textfield;
 }
 
 .counter input::-webkit-outer-spin-button,
