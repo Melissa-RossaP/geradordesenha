@@ -4,9 +4,9 @@
     --text-dark: #A8324A;
     --input-bg: hsl(349, 100%, 90%);
     --white: #FFFFFF;
-    --danger: #D90429;
-    --warning: #FFCC00;
-    --success: #38B000;
+    --danger: #ff2c4f;
+    --warning: #ffe88a;
+    --success: #b7ff96;
 }
 
 * {
@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: hsl(349, 95%, 85%);
+    background-color: hsl(348, 100%, 91%);
     display: flex;
     justify-content: center;
     align-items: center;
