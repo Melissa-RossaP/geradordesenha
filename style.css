@@ -2,7 +2,7 @@
     --bg-pink: #FFB3C1;
     --card-pink: #FFA4B4;
     --text-dark: #A8324A;
-    --input-bg: #FFCAD4;
+    --input-bg: hsl(349, 100%, 90%);
     --white: #FFFFFF;
     --danger: #D90429;
     --warning: #FFCC00;
@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: #F5F5F5;
+    background-color: hsl(349, 95%, 85%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,9 +53,6 @@ body {
     opacity: 0.9;
 }
 
-.cadeado-icon {
-    font-size: 3rem;
-}
 
 /* Layout Estrutural */
 .main-content {
